@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header {
+  height: 4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--p-cyan-800);
+  box-shadow: 4px 4px 10px var(--p-cyan-900);
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.content-container {
+  width: calc(100% - 40px);
+  height: calc(100vh - 4rem - 80px);
+  background-color: var(--p-cyan-800);
+  box-shadow: 4px 4px 15px var(--p-cyan-900);
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px;
+  overflow-y: scroll;
+  scrollbar-color: var(--p-cyan-500) transparent;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+  border-radius: 90px;
+}

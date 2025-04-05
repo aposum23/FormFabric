@@ -1,17 +1,23 @@
-import './assets/main.css';
+import './assets/main.scss';
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
-import Material from '@primeuix/themes/material';
+import Aura from '@primeuix/themes/aura';
 import App from './App.vue';
 
+import {
+    Divider
+} from "primevue";
+
 const app = createApp(App);
+
+app.component('Divider', Divider)
 
 app.use(createPinia());
 app.use(PrimeVue, {
     theme: {
-        preset: Material
+        preset: Aura
     }
 })
 

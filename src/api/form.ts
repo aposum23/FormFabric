@@ -5,7 +5,7 @@ export const getFormFields = async (): Promise<{fields: ISchema[]}> => {
         fields: [
             { type: "text", label: "Имя", model: "name", required: true },
 
-            { type: "email", label: "Email", model: "email", required: true },
+            { type: "email", label: "Email", model: "email", required: true, pattern: '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$' },
 
             { type: "password", label: "Пароль", model: "password", required: true, minLength: 6 },
 

@@ -6,5 +6,6 @@ export interface ISchema {
     model: string,
     required: boolean,
     minLength?: number,
+    pattern?: string,
     options?: string[],
 };

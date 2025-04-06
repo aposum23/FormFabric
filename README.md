@@ -1,33 +1,61 @@
-# frontend
+# FormFabric
 
-This template should help get you started developing with Vue 3 in Vite.
+Шаблон фабрики форм, в котором реализованы различные валидации и генерирование формы из JSON объекта, возвращаемого в запросе с backend
 
-## Recommended IDE Setup
+## Разделы
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+<ul>
+  <li><a href="#used-technology">Используемые технологии</a></li>
+  <li><a href="#app-instalation">Установка и запуск примера</a></li>
+  <li><a href="#my-contacts">Контакты</a></li>
+</ul>
 
-## Type Support for `.vue` Imports in TS
+<h2 id="used-technology">Используемые технологии</h2>
+<br/>
+<ol>
+  <li>Vue 3 - Основной фреймворк, на котором разрабатывалось приложение</li>
+  <li>PrimeVue - Библиотека готовых компонентов и тем, позволяющая быстро построить пользовательский интерфейс</li>
+  <li>TypeScript - Основной язык программирования</li>
+  <li>SCSS - Препроцессор стилей</li>
+  <li>Vite - Сборщик проекта</li>
+</ol>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+<h2 id="app-instalation">Установка и запуск примера</h2>
+<br/>
+Для установки необходимо выполнить копирование репозитория при помощи команды:
 
-## Customize configuration
+```sh
+git clone https://github.com/aposum23/FormFabric
+```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Далее необходимо перейти в каталог скопированного репозитория при помощи команды:
 
-## Project Setup
+```sh
+cd FormFabric
+```
+
+После чего требуется установить зависимости, необходимые для функционирования приложения:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Когда завершится установка зависимостей, мы можем запустить приложение в режиме отладки при помощи следующей команды:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Так же возможно произвести сборку приложения при помощи команды:
 
 ```sh
 npm run build
 ```
+
+И после того как завершится сборка, можно посмотреть на собранный вариант приложения при помощи команды:
+
+```sh
+npm run preview
+```
+<h2 id="my-contacts">Контакты</h2>
+<h3><a href="https://t.me/MishaDuhno">Telegram</a></h3>

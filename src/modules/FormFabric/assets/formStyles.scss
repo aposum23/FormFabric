@@ -38,3 +38,8 @@
     color: var(--p-inputtext-invalid-border-color);
   }
 }
+
+.p-select, .p-inputtext, .p-checkbox-box {
+  color: var(--p-stone-800) !important;
+  background: var(--p-stone-200) !important;
+}

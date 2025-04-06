@@ -9,6 +9,8 @@ body {
   margin: 0;
   font-size: 16px;
   font-family: Raleway, Calibri, Arial, serif;
+  background: var(--p-stone-100);
+  color: var(--p-stone-800)
 }
 
 .header {
@@ -16,8 +18,8 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: var(--p-cyan-800);
-  box-shadow: 4px 4px 10px var(--p-cyan-900);
+  background-color: var(--p-stone-300);
+  box-shadow: 4px 4px 10px var(--p-stone-200);
   border-radius: 6px;
   padding: 20px;
   margin: 20px;
@@ -26,8 +28,8 @@ body {
 .content-container {
   width: calc(100% - 40px);
   height: calc(100vh - 4rem - 80px);
-  background-color: var(--p-cyan-800);
-  box-shadow: 4px 4px 15px var(--p-cyan-900);
+  background-color: var(--p-stone-300);
+  box-shadow: 4px 4px 15px var(--p-stone-200);
   border-radius: 6px;
   padding: 20px;
   margin: 20px;

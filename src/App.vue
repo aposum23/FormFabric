@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import {useFormStore} from "@/stores/FormStore.ts";
-import {onMounted} from "vue";
-import FormFabric from "@/modules/FormFabric/FormFabric.vue";
+import { useFormStore } from "@/stores/FormStore.ts";
+import {onBeforeMount, onMounted, toRefs} from "vue";
+import FormFabric from "@/modules/FormFabric";
 
-const {getFields, formFields, formData} = useFormStore();
+const formStore = useFormStore();
+const { formFields, formData } = toRefs(formStore);
+const { getFields } = formStore;
 
 onMounted(() => {
   getFields();
@@ -19,14 +21,22 @@ onMounted(() => {
       <h2>Форма - пример</h2>
     </div>
     <Divider />
-    <FormFabric :schema="formFields" v-model="formData" />
+    <div class="chapter-content">
+      <FormFabric :schema="formFields" v-model="formData" />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.chapter-header {
-  & h2 {
-    margin: 0;
+.chapter {
+  &-header {
+    & h2 {
+      margin: 0;
+    }
+  }
+  &-content {
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

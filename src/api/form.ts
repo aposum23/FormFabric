@@ -1,4 +1,4 @@
-import type {ISchema} from "@/types/formCommonTypes.ts";
+import type {ISchema} from "@/modules/FormFabric/types";
 
 export const getFormFields = async (): Promise<{fields: ISchema[]}> => {
     return {

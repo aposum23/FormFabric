@@ -58,5 +58,4 @@ npm run build
 npm run preview
 ```
 <h2 id="my-contacts">Контакты</h2>
-<br/>
 <h3><a href="https://t.me/MishaDuhno">Telegram</a></h3>

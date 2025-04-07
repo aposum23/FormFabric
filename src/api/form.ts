@@ -17,3 +17,15 @@ export const getFormFields = async (): Promise<{fields: ISchema[]}> => {
         ]
     }
 }
+
+export const postFormDataRequest = async (data: {[K:string]: string | boolean}): Promise<void> => {
+    window.localStorage.setItem('formData', JSON.stringify(data));
+}
+
+export const getFormDataRequest = async (): Promise<{[K:string]: string | boolean}> => {
+    return JSON.parse(window.localStorage.getItem('formData') || '')
+}
+
+export const deleteFormDataRequest = async (): Promise<void> => {
+    window.localStorage.removeItem('formData');
+}

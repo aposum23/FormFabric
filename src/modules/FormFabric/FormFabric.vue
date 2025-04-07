@@ -7,13 +7,14 @@ import {
   Select
 } from "primevue";
 
-import {ref} from "vue";
+import {ref, toRefs} from "vue";
 import type {ISchema} from "./types";
 import {useValidation} from "@/modules/FormFabric/composables/validation.ts";
 
 
 const props = defineProps<{
-  schema: ISchema[] | undefined
+  schema: ISchema[] | undefined,
+  validationMessages: {[K:string]: string}
 }>();
 
 // Управление модел валью ----------------------
@@ -25,7 +26,7 @@ const updateModelValue = (value: string | boolean, model: string): void => {
 }
 
 // Блок валидации формы ------------------------
-const validationMessages = ref<{[K:string]: string}>({});
+const { validationMessages } = toRefs(props);
 
 const {clearValidationMessage, validateField} = useValidation(modelValue, validationMessages);
 
@@ -86,6 +87,10 @@ const {clearValidationMessage, validateField} = useValidation(modelValue, valida
         </div>
       </div>
     </template>
+    <div class="control-container">
+      <slot name="buttons">
+      </slot>
+    </div>
   </div>
 </template>
 

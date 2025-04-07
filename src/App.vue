@@ -4,11 +4,16 @@ import {onBeforeMount, onMounted, toRefs} from "vue";
 import FormFabric from "@/modules/FormFabric";
 
 const formStore = useFormStore();
-const { formFields, formData } = toRefs(formStore);
-const { getFields } = formStore;
+const { formFields, formData, validationMessages } = toRefs(formStore);
+const { getFields,
+  deleteFormData,
+  clearFormData,
+  getFormData,
+  saveFormData } = formStore;
 
 onMounted(() => {
   getFields();
+  getFormData();
 })
 </script>
 
@@ -22,7 +27,17 @@ onMounted(() => {
     </div>
     <Divider />
     <div class="chapter-content">
-      <FormFabric :schema="formFields" v-model="formData" />
+      <FormFabric
+          :schema="formFields"
+          :validation-messages="validationMessages"
+          v-model="formData"
+      >
+        <template #buttons>
+          <Button label="Сохранить" @click="saveFormData"/>
+          <Button label="Отменить" outlined @click="clearFormData"/>
+          <Button label="Удалить" outlined @click="deleteFormData"/>
+        </template>
+      </FormFabric>
     </div>
   </div>
 </template>

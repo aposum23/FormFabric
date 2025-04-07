@@ -7,12 +7,14 @@ import Aura from '@primeuix/themes/aura';
 import App from './App.vue';
 
 import {
-    Divider
+    Divider,
+    Button
 } from "primevue";
 
 const app = createApp(App);
 
-app.component('Divider', Divider)
+app.component('Divider', Divider);
+app.component('Button', Button);
 
 app.use(createPinia());
 app.use(PrimeVue, {

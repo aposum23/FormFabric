@@ -47,3 +47,9 @@
 .p-select-label {
   color: var(--p-stone-800) !important;
 }
+
+.control-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

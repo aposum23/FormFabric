@@ -1,7 +1,9 @@
 import type {ISchema} from "../types";
 import type {ModelRef, Ref} from "vue";
 
-export function useValidation (modelValue: ModelRef<{[K:string]: string | boolean} | undefined>, validationMessages: Ref<{[K:string]: string}>) {
+type ModelValueType = {[K:string]: string | boolean} | undefined
+
+export function useValidation (modelValue: ModelRef<ModelValueType> | Ref<ModelValueType>, validationMessages: Ref<{[K:string]: string}>) {
 
     const clearValidationMessage = (model: string): void => {
         if (validationMessages.value[model])

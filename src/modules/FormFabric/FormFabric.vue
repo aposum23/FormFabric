@@ -59,9 +59,12 @@ const {clearValidationMessage, validateField} = useValidation(modelValue, valida
             class="form-field__input"
             showClear
             :options="field.options"
-            :invalid="validateField(field)"
+            :invalid="validationMessages[field.model]"
             :model-value="modelValue ? modelValue[field.model] as string : ''"
-            @update:model-value="(value: string) => updateModelValue(value, field.model)"
+            @update:model-value="(value: string) => {
+              updateModelValue(value, field.model);
+              validateField(field);
+            }"
             @focus="clearValidationMessage(field.model)"
         />
         <div class="form-field__message">
@@ -75,9 +78,12 @@ const {clearValidationMessage, validateField} = useValidation(modelValue, valida
         <div class="form-field__input">
           <Checkbox
               binary
-              :invalid="validateField(field)"
+              :invalid="validationMessages[field.model]"
               :model-value="modelValue ? modelValue[field.model] as boolean : false"
-              @update:model-value="(value: boolean) => updateModelValue(value, field.model)"
+              @update:model-value="(value: boolean) => {
+                updateModelValue(value, field.model);
+                validateField(field);
+              }"
               @focus="clearValidationMessage(field.model)"
           />
           <div class="form-field__message">
